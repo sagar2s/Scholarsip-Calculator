@@ -1,0 +1,52 @@
+body {
+    background-color: #FFFFFF; /* White background */
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #FFFFFF; /* White header background */
+    color: #000000;
+    display: flex;
+    align-items: center; /* Vertically center-align items */
+    justify-content: center; /* Horizontally center-align items */
+    padding: 20px; /* Add some padding for spacing */
+    text-align: center; /* Center align text */
+}
+
+.logo {
+    width: 120px; /* Increase logo size */
+    margin-right: 20px; /* Space between logo and heading */
+}
+
+.college-name {
+    color: #D8232A; /* Red for the college name */
+    font-weight: bold;
+    margin: 0;
+}
+
+.affiliation, .address {
+    color: #0C1936; /* Blue for the address and affiliation */
+}
+
+.card {
+    border: 2px solid #D8232A;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #D8232A;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #C51F28;
+}
+
+footer {
+    background-color: #0C1936;
+    color: #FFFFFF;
+    padding: 10px 0;
+}

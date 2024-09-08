@@ -1,0 +1,28 @@
+<!-- templates/result.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">Scholarship Result</h2>
+<div class="card p-4 shadow-sm">
+    <h4>Thank you, {{ name }}!</h4>
+    <p>Program Interested: <strong>{{ program }}</strong></p>
+    <p>CMAT Score: <strong>{{ cmat_score }}</strong></p>
+    <p>High School GPA: <strong>{{ gpa }}</strong></p>
+
+    {% if scholarship == 'full' %}
+    <div class="alert alert-success">
+        Congratulations! You are eligible for a <strong>Full Scholarship</strong> in the {{ program }} program.
+    </div>
+    {% elif scholarship == 'half' %}
+    <div class="alert alert-info">
+        You are eligible for a <strong>50% Scholarship</strong> in the {{ program }} program.
+    </div>
+    {% else %}
+    <div class="alert alert-warning">
+        Unfortunately, you are <strong>not eligible</strong> for a scholarship based on the entered scores.
+    </div>
+    {% endif %}
+
+    <a href="{{ url_for('scholarship_form') }}" class="btn btn-primary mt-3">Try Again</a>
+</div>
+{% endblock %}

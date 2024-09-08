@@ -1,0 +1,34 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Model College - Scholarship Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="text-center p-4 d-flex align-items-center">
+        <img src="{{ url_for('static', filename='Central Model College Logo.jpg') }}" alt="Central Model College Logo" class="logo mr-3">
+        <div>
+            <h1 class="college-name">Central Model College</h1>
+            <p class="affiliation font-italic">(4-year programs affiliated to TU)</p>
+            <p class="address font-italic">Bharatpur Oralo, Chitwan | 056-574273, 9855052505</p>
+        </div>
+    </header>
+    
+    <!-- Main Content Section -->
+    <div class="container mt-4">
+        {% block content %}
+        <!-- Content specific to each page will be inserted here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-4">
+        © Central Model College, All Rights Reserved
+    </footer>
+</body>
+</html>

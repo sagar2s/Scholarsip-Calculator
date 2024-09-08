@@ -1,0 +1,10 @@
+<!-- templates/error.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">Error</h2>
+<div class="alert alert-danger">
+    <p>There was an error processing your request. Please try again or contact support.</p>
+</div>
+<a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Go Back to Home</a>
+{% endblock %}
