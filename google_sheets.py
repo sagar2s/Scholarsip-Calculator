@@ -3,7 +3,7 @@ from googleapiclient.discovery import build
 import os
 
 # Load Google Sheets API credentials
-SERVICE_ACCOUNT_FILE = r'C:\Users\Sagar Panta\Downloads\Scholarsip Calculator\thematic-bloom-435018-i8-3c7ff0126a74.json'  # Update with your JSON key file path
+SERVICE_ACCOUNT_FILE = '/thematic-bloom-435018-i8-3c7ff0126a74.json'  # Update with your JSON key file path
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 service = build('sheets', 'v4', credentials=creds)
