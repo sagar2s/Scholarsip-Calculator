@@ -86,5 +86,3 @@ def calculate_scholarship(cmat_score, gpa):
 def page_not_found(e):
     return render_template('error.html'), 404
 
-if __name__ == '__main__':
-    app.run(debug=False)
