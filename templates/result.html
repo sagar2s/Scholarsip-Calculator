@@ -2,27 +2,71 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2 class="text-center mb-4">Scholarship Result</h2>
-<div class="card p-4 shadow-sm">
-    <h4>Thank you, {{ name }}!</h4>
-    <p>Program Interested: <strong>{{ program }}</strong></p>
-    <p>CMAT Score: <strong>{{ cmat_score }}</strong></p>
-    <p>High School GPA: <strong>{{ gpa }}</strong></p>
+    <!-- Ad Banner Section -->
+    <div class="ad-banner">
+        Admission Open!!
+        <div class="box box-bhm">BHM</div>
+        <div class="box box-bim">BIM</div>
+        <div class="box box-bbs">BBS</div>
+        | Limited Seats Available
+    </div>
+    <h2 class="text-center mb-4">Scholarship Result</h2>
+    <div class="card p-4 shadow-sm">
+        <h4>Thank you, {{ name }}!</h4>
+        <p>Program Interested: <strong>{{ program }}</strong></p>
+        <p>CMAT Score: <strong>{{ cmat_score }}</strong></p>
+        <p>High School GPA: <strong>{{ gpa }}</strong></p>
 
-    {% if scholarship == 'full' %}
-    <div class="alert alert-success">
-        Congratulations! You are eligible for a <strong>Full Scholarship</strong> in the {{ program }} program.
-    </div>
-    {% elif scholarship == 'half' %}
-    <div class="alert alert-info">
-        You are eligible for a <strong>50% Scholarship</strong> in the {{ program }} program.
-    </div>
-    {% else %}
-    <div class="alert alert-warning">
-        Unfortunately, you are <strong>not eligible</strong> for a scholarship based on the entered scores.
-    </div>
-    {% endif %}
+        <!-- Section for Admission Fee Scholarship based on CMAT and GPA -->
+        <div class="mt-4">
+            <h5>Admission Fee Scholarship Based on CMAT Score and GPA</h5>
+            {% if scholarship == 100 %}
+            <div class="alert alert-success">
+                Congratulations! You are eligible for a <strong>100% Admission Fee Scholarship</strong>.
+            </div>
+            {% elif scholarship == 50 %}
+            <div class="alert alert-info">
+                You are eligible for a <strong>50% Admission Fee Scholarship</strong>.
+            </div>
+            {% elif scholarship == 30 %}
+            <div class="alert alert-info">
+                You are eligible for a <strong>30% Admission Fee Scholarship</strong>.
+            </div>
+            {% elif scholarship == 20 %}
+            <div class="alert alert-info">
+                You are eligible for a <strong>20% Admission Fee Scholarship</strong>.
+            </div>
+            {% else %}
+            <div class="alert alert-warning">
+                Unfortunately, you are <strong>not eligible</strong> for an Admission Fee Scholarship based on your CMAT score and GPA.
+            </div>
+            {% endif %}
+        </div>
 
-    <a href="{{ url_for('scholarship_form') }}" class="btn btn-primary mt-3">Try Again</a>
-</div>
+        <!-- Claim Scholarship Section -->
+        <div class="mt-4">
+            <h5>Claim Your Scholarship</h5>
+            <p>If you need assistance to claim your scholarship, you can reach out to us:</p>
+            <div class="d-flex flex-column flex-md-row align-items-center mb-3">
+                <!-- Call Us Button -->
+                <a href="tel:9855052505" class="btn btn-outline-primary mb-3 mb-md-0 me-md-3">
+                    <i class="bi bi-telephone me-2"></i> Call Us
+                </a>
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/9855052505?text=Hi,%20I%20got%20{{ scholarship }}%25%20Scholarship%20fee%20calculated%20in%20the%20Scholarship%20Calculator%20App.%20Please%20guide%20me%20to%20claim%20it" class="btn btn-outline-success mb-3 mb-md-0 me-md-3" target="_blank">
+                    <i class="bi bi-whatsapp me-2"></i> WhatsApp
+                </a>
+                <!-- Messenger Button -->
+                <a href="https://m.me/61559724779311?ref=Hi,%20I%20got%20{{ scholarship }}%25%20Scholarship%20fee%20calculated%20in%20the%20Scholarship%20Calculator%20App.%20Please%20guide%20me%20to%20claim%20it" class="btn btn-outline-info mb-3 mb-md-0" target="_blank">
+                    <i class="bi bi-messenger me-2"></i> Messenger
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="d-flex justify-content-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary me-3">Go to Home</a>
+            <a href="{{ url_for('scholarship_form') }}" class="btn btn-primary">Try Again</a>
+        </div>
+    </div>
 {% endblock %}

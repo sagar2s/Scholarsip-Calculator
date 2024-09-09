@@ -1,26 +1,110 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central Model College - Scholarship Calculator</title>
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .header-container {
+            padding: 1rem;
+        }
+        .header-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .logo-container {
+            margin-bottom: 1rem; /* Space between logo and text on mobile */
+        }
+        .logo {
+            max-width: 150px; /* Adjust width to fit design */
+            height: auto;
+        }
+        .header-text {
+            flex: 1;
+            margin-bottom: 1rem; /* Space between text and banner */
+        }
+        .ad-banner {
+            background-color: #f8f9fa; /* Light gray background for the banner */
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Space between elements */
+            margin-top: 15px;
+            border: 1px solid #ddd; /* Light border around the banner */
+        }
+        .ad-banner .box {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px; /* Slightly rounded corners */
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            margin: 0 5px; /* Space between boxes */
+        }
+        .box-bhm {
+            background-color: royalblue;
+        }
+        .box-bim {
+            background-color: red;
+        }
+        .box-bbs {
+            background-color: green;
+        }
+        @media (min-width: 768px) {
+            .header-row {
+                flex-direction: row; /* Align items in a row for larger screens */
+                text-align: left;
+            }
+            .logo-container {
+                margin-bottom: 0; /* Remove margin on larger screens */
+                margin-right: 1rem; /* Space between logo and text */
+            }
+        }
+        @media (max-width: 767.98px) {
+            .header-row {
+                flex-direction: column; /* Stack items vertically on mobile */
+            }
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header class="text-center p-4 d-flex align-items-center">
-        <img src="{{ url_for('static', filename='Central Model College Logo.jpg') }}" alt="Central Model College Logo" class="logo mr-3">
-        <div>
-            <h1 class="college-name">Central Model College</h1>
-            <p class="affiliation font-italic">(4-year programs affiliated to TU)</p>
-            <p class="address font-italic">Bharatpur Oralo, Chitwan | 056-574273, 9855052505</p>
+    <header class="container-fluid header-container">
+        <div class="header-row">
+            <!-- Logo Column -->
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='Central Model College Logo.jpg') }}" alt="Central Model College Logo" class="logo">
+            </div>
+            <!-- Text Column -->
+            <div class="header-text">
+                <h1 class="college-name">Central Model College</h1>
+                <p class="affiliation font-italic">(4-year programs affiliated to TU)</p>
+                <p class="address font-italic">Bharatpur Oralo, Chitwan | 056-574273, 9855052505</p>
+            </div>
         </div>
     </header>
     
     <!-- Main Content Section -->
-    <div class="container mt-4">
+    <div class="container">
         {% block content %}
         <!-- Content specific to each page will be inserted here -->
         {% endblock %}
@@ -30,5 +114,10 @@
     <footer class="text-center mt-4">
         © Central Model College, All Rights Reserved
     </footer>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

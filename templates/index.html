@@ -2,6 +2,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+        <!-- Ad Banner Section -->
+        <div class="ad-banner">
+            Admission Open!!
+            <div class="box box-bhm">BHM</div>
+            <div class="box box-bim">BIM</div>
+            <div class="box box-bbs">BBS</div>
+            | Limited Seats Available
+        </div>
 <h2 class="text-center mb-4">Check your Scholarship!!</h2>
 <h2 class="text-center mb-4">Enter Your Details</h2>
 <form action="{{ url_for('form') }}" method="post" class="card p-4 shadow-sm">
